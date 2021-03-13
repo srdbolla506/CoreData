@@ -30,6 +30,10 @@
 		5493FFE625FCDFF1007E3113 /* MappingModel.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFE525FCDFF1007E3113 /* MappingModel.xcmappingmodel */; };
 		5493FFEB25FCE054007E3113 /* Manager+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFE925FCE054007E3113 /* Manager+CoreDataClass.swift */; };
 		5493FFEC25FCE054007E3113 /* Manager+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFEA25FCE054007E3113 /* Manager+CoreDataProperties.swift */; };
+		5493FFF425FD26DE007E3113 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5493FFF325FD26DE007E3113 /* SignIn.storyboard */; };
+		5493FFF725FD28EE007E3113 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFF625FD28EE007E3113 /* SignInViewController.swift */; };
+		5493FFFA25FD297C007E3113 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFF925FD297C007E3113 /* SignInViewModel.swift */; };
+		5493FFFD25FD2FA7007E3113 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFFC25FD2FA7007E3113 /* Keychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,10 @@
 		5493FFE525FCDFF1007E3113 /* MappingModel.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingModel.xcmappingmodel; sourceTree = "<group>"; };
 		5493FFE925FCE054007E3113 /* Manager+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Manager+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5493FFEA25FCE054007E3113 /* Manager+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Manager+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5493FFF325FD26DE007E3113 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		5493FFF625FD28EE007E3113 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5493FFF925FD297C007E3113 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		5493FFFC25FD2FA7007E3113 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 			children = (
 				5493FFBF25FCA6DA007E3113 /* EmployeeViewController.swift */,
 				5493FFCB25FCACF0007E3113 /* EmployeeDetailViewController.swift */,
+				5493FFF625FD28EE007E3113 /* SignInViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -119,6 +128,7 @@
 			children = (
 				5493FF8325FC96F3007E3113 /* LaunchScreen.storyboard */,
 				5493FF7B25FC96F2007E3113 /* Main.storyboard */,
+				5493FFF325FD26DE007E3113 /* SignIn.storyboard */,
 				5493FFA925FC9BAC007E3113 /* Cells */,
 			);
 			path = View;
@@ -143,6 +153,7 @@
 				5493FFAA25FC9C1D007E3113 /* Cells */,
 				5493FFB325FCA000007E3113 /* EmployeeControllerViewModel.swift */,
 				5493FFD725FCC131007E3113 /* EmployeeDetailViewModel.swift */,
+				5493FFF925FD297C007E3113 /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -179,6 +190,7 @@
 				5493FFAF25FC9D40007E3113 /* Dynamic.swift */,
 				5493FFB625FCA066007E3113 /* CoreDataManager.swift */,
 				5493FFC225FCA6F5007E3113 /* Constants.swift */,
+				5493FFFC25FD2FA7007E3113 /* Keychain.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -244,6 +256,7 @@
 				5493FF8525FC96F3007E3113 /* LaunchScreen.storyboard in Resources */,
 				5493FFA125FC99FE007E3113 /* EmployeeTableViewCell.xib in Resources */,
 				5493FF8225FC96F3007E3113 /* Assets.xcassets in Resources */,
+				5493FFF425FD26DE007E3113 /* SignIn.storyboard in Resources */,
 				5493FF7D25FC96F2007E3113 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,11 +272,13 @@
 				5493FFD825FCC131007E3113 /* EmployeeDetailViewModel.swift in Sources */,
 				5493FF9E25FC9956007E3113 /* Employee+CoreDataProperties.swift in Sources */,
 				5493FFB025FC9D40007E3113 /* Dynamic.swift in Sources */,
+				5493FFFA25FD297C007E3113 /* SignInViewModel.swift in Sources */,
 				5493FFEC25FCE054007E3113 /* Manager+CoreDataProperties.swift in Sources */,
 				5493FFB425FCA000007E3113 /* EmployeeControllerViewModel.swift in Sources */,
 				5493FF7625FC96F2007E3113 /* AppDelegate.swift in Sources */,
 				5493FFCC25FCACF0007E3113 /* EmployeeDetailViewController.swift in Sources */,
 				5493FF8025FC96F2007E3113 /* EmployeeManagerCoreData.xcdatamodeld in Sources */,
+				5493FFF725FD28EE007E3113 /* SignInViewController.swift in Sources */,
 				5493FFE625FCDFF1007E3113 /* MappingModel.xcmappingmodel in Sources */,
 				5493FF9D25FC9956007E3113 /* Employee+CoreDataClass.swift in Sources */,
 				5493FFC025FCA6DA007E3113 /* EmployeeViewController.swift in Sources */,
@@ -273,6 +288,7 @@
 				5493FFB725FCA066007E3113 /* CoreDataManager.swift in Sources */,
 				5493FFC925FCAC82007E3113 /* DetailTextFieldCell.swift in Sources */,
 				5493FFC325FCA6F5007E3113 /* Constants.swift in Sources */,
+				5493FFFD25FD2FA7007E3113 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
