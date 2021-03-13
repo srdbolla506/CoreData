@@ -15,7 +15,13 @@ class EmployeeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.configureViewModel()
+        self.tableView.reloadData()
+    }
+    
+    func configureViewModel() {
+        self.employeeControllerViewModel.employeesModelArray = self.employeeControllerViewModel.fetchEmployees()
     }
 }
 
@@ -25,8 +31,12 @@ extension EmployeeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.de
-        return UITableViewCell()
+        guard let employeeTableViewCell = tableView.dequeueReusableCell(withIdentifier: EmployeeTableViewCell.Constants.identifier, for: indexPath) as? EmployeeTableViewCell else {
+            return UITableViewCell()
+        }
+        employeeTableViewCell.configureCell(employeeViewModel: employeeControllerViewModel.employeesModelArray[indexPath.row])
+        
+        return employeeTableViewCell
     }
     
     
