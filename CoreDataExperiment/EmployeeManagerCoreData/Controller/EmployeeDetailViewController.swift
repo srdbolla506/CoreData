@@ -96,7 +96,9 @@ extension EmployeeDetailViewController {
         switch tableViewCell.textField.placeholder {
         case EmployeeFields.number.rawValue:
             tableViewCell.textField.text = employeeDetailViewModel.employee.number
-            tableViewCell.textField.isUserInteractionEnabled = false
+            if employeeDetailViewModel.employee.number.count > 0 {
+                tableViewCell.textField.isUserInteractionEnabled = false
+            }
             break
             
         case EmployeeFields.name.rawValue:
