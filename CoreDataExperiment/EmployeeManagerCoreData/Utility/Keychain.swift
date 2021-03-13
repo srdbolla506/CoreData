@@ -54,4 +54,29 @@ class Keychain {
         return ("", "")
         
     }
+    
+    func updateKeychainCredentials(server: String, username: String, newPassword: String) {
+        let query = [
+          kSecClass: kSecClassInternetPassword,
+          kSecAttrServer: server,
+          kSecAttrAccount: username
+        ] as CFDictionary
+
+        let updateFields = [
+          kSecValueData: newPassword.data(using: .utf8)!
+        ] as CFDictionary
+
+        let status = SecItemUpdate(query, updateFields)
+        print("Operation finished with status: \(status)")
+    }
+    
+    func deleteKeychainCredentials(server: String, username: String) {
+        let query = [
+          kSecClass: kSecClassInternetPassword,
+          kSecAttrServer: server,
+          kSecAttrAccount: username
+        ] as CFDictionary
+
+        SecItemDelete(query)
+    }
 }
