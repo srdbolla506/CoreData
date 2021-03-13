@@ -99,4 +99,28 @@ class CoreDataManager {
 
     }
     
+    func deleteEmployeeDetails(employeeViewModel: EmployeeViewModel) {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        guard let moc = appDelegate?.persistentContainer.viewContext else {
+            return
+        }
+        
+        let fetchRequest = NSFetchRequest<Employee>(entityName: "Employee")
+        fetchRequest.predicate = NSPredicate.init(format: "id = %@", employeeViewModel.number)
+        
+        do {
+            let employees = try moc.fetch(fetchRequest)
+            if employees.count > 0 {
+                let employee = employees[0]
+                moc.delete(employee)
+            }
+        } catch _ {
+            
+        }
+
+        appDelegate?.saveContext()
+    }
+    
+    
 }

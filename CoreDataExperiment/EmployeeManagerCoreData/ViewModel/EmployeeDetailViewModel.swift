@@ -18,4 +18,7 @@ class EmployeeDetailViewModel {
         CoreDataManager.shared.createOrUpdateEmployee(employeeViewModel: employee)
     }
 
+    func deleteEmployeeDetails() {
+        CoreDataManager.shared.deleteEmployeeDetails(employeeViewModel: employee)
+    }
 }

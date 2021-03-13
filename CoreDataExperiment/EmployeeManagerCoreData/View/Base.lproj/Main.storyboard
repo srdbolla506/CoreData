@@ -72,8 +72,12 @@
                                         <rect key="frame" x="0.0" y="748" width="414" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh5-t6-Mc3">
-                                                <rect key="frame" x="20" y="10" width="374" height="30"/>
+                                                <rect key="frame" x="233" y="10" width="161" height="30"/>
                                                 <color key="backgroundColor" red="0.34120720609999999" green="0.50421056230000005" blue="0.54663212439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="161" id="E9J-EO-uq1"/>
+                                                    <constraint firstAttribute="height" constant="30" id="p2o-Rn-kxN"/>
+                                                </constraints>
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -81,13 +85,31 @@
                                                     <action selector="saveButtonAction:" destination="bNP-5T-x8w" eventType="touchUpInside" id="Qid-rT-OiA"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoW-Da-Iex">
+                                                <rect key="frame" x="20" y="10" width="173" height="30"/>
+                                                <color key="backgroundColor" red="0.34120720609999999" green="0.50421056230000005" blue="0.54663212439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="OwL-db-aAs"/>
+                                                </constraints>
+                                                <state key="normal" title="Delete">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deleteButtonAction:" destination="bNP-5T-x8w" eventType="touchUpInside" id="F3n-GR-pc8"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Sh5-t6-Mc3" firstAttribute="top" secondItem="pnX-03-YWo" secondAttribute="top" constant="10" id="0VV-DD-5tc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Sh5-t6-Mc3" secondAttribute="trailing" constant="20" id="Bwx-bV-9gF"/>
+                                            <constraint firstAttribute="bottom" secondItem="CoW-Da-Iex" secondAttribute="bottom" constant="10" id="CcG-9y-kgK"/>
                                             <constraint firstAttribute="bottom" secondItem="Sh5-t6-Mc3" secondAttribute="bottom" constant="10" id="FeR-NI-fFu"/>
-                                            <constraint firstItem="Sh5-t6-Mc3" firstAttribute="centerX" secondItem="pnX-03-YWo" secondAttribute="centerX" id="Rmk-Yy-q0N"/>
-                                            <constraint firstItem="Sh5-t6-Mc3" firstAttribute="width" secondItem="pnX-03-YWo" secondAttribute="height" multiplier="187:25" id="vlg-P1-W1h"/>
+                                            <constraint firstItem="Sh5-t6-Mc3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CoW-Da-Iex" secondAttribute="trailing" constant="20" id="GiB-TA-gfg"/>
+                                            <constraint firstItem="CoW-Da-Iex" firstAttribute="width" secondItem="Sh5-t6-Mc3" secondAttribute="width" multiplier="1.07453" id="TBa-pT-eVX"/>
+                                            <constraint firstItem="Sh5-t6-Mc3" firstAttribute="leading" relation="lessThanOrEqual" secondItem="CoW-Da-Iex" secondAttribute="trailing" constant="40" id="cas-Ws-cdU"/>
+                                            <constraint firstItem="CoW-Da-Iex" firstAttribute="top" secondItem="pnX-03-YWo" secondAttribute="top" constant="10" id="o54-t8-Leq"/>
+                                            <constraint firstItem="CoW-Da-Iex" firstAttribute="leading" secondItem="pnX-03-YWo" secondAttribute="leading" constant="20" id="wmi-uq-S6P"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -106,6 +128,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteButton" destination="CoW-Da-Iex" id="gl1-Er-gXH"/>
                         <outlet property="tableView" destination="BAE-4E-kBp" id="JbG-po-Ye4"/>
                     </connections>
                 </viewController>

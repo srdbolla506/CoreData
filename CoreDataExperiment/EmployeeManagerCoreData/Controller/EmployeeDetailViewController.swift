@@ -11,6 +11,8 @@ class EmployeeDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var deleteButton: UIButton!
+    
     var employeeDetailViewModel: EmployeeDetailViewModel = EmployeeDetailViewModel()
     
     override func viewDidLoad() {
@@ -18,6 +20,8 @@ class EmployeeDetailViewController: UIViewController {
         
         self.configureTableView()
         self.tableView.reloadData()
+        
+        self.configureDeleteButton()
     }
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
@@ -25,10 +29,23 @@ class EmployeeDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func deleteButtonAction(_ sender: UIButton) {
+        self.employeeDetailViewModel.deleteEmployeeDetails()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func configureTableView() {
         tableView.register(UINib.init(nibName: DetailTextFieldCell.Constants.identifier, bundle: nil), forCellReuseIdentifier: DetailTextFieldCell.Constants.identifier)
         tableView.separatorColor = UIColor.clear
         tableView.tableFooterView = UIView()
+    }
+    
+    func configureDeleteButton() {
+        if self.employeeDetailViewModel.employee.number.count > 0 {
+            self.deleteButton.isUserInteractionEnabled = true
+        } else {
+            self.deleteButton.isUserInteractionEnabled = false
+        }
     }
 
 }
