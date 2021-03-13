@@ -27,6 +27,9 @@
 		5493FFC925FCAC82007E3113 /* DetailTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFC825FCAC82007E3113 /* DetailTextFieldCell.swift */; };
 		5493FFCC25FCACF0007E3113 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFCB25FCACF0007E3113 /* EmployeeDetailViewController.swift */; };
 		5493FFD825FCC131007E3113 /* EmployeeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFD725FCC131007E3113 /* EmployeeDetailViewModel.swift */; };
+		5493FFE625FCDFF1007E3113 /* MappingModel.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFE525FCDFF1007E3113 /* MappingModel.xcmappingmodel */; };
+		5493FFEB25FCE054007E3113 /* Manager+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFE925FCE054007E3113 /* Manager+CoreDataClass.swift */; };
+		5493FFEC25FCE054007E3113 /* Manager+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5493FFEA25FCE054007E3113 /* Manager+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,10 @@
 		5493FFC825FCAC82007E3113 /* DetailTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextFieldCell.swift; sourceTree = "<group>"; };
 		5493FFCB25FCACF0007E3113 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
 		5493FFD725FCC131007E3113 /* EmployeeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewModel.swift; sourceTree = "<group>"; };
+		5493FFDE25FCDF3D007E3113 /* EmployeeManagerCoreData v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EmployeeManagerCoreData v2.xcdatamodel"; sourceTree = "<group>"; };
+		5493FFE525FCDFF1007E3113 /* MappingModel.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingModel.xcmappingmodel; sourceTree = "<group>"; };
+		5493FFE925FCE054007E3113 /* Manager+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Manager+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5493FFEA25FCE054007E3113 /* Manager+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Manager+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +127,12 @@
 		5493FF9325FC988D007E3113 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5493FFE925FCE054007E3113 /* Manager+CoreDataClass.swift */,
+				5493FFEA25FCE054007E3113 /* Manager+CoreDataProperties.swift */,
 				5493FF9B25FC9956007E3113 /* Employee+CoreDataClass.swift */,
 				5493FF9C25FC9956007E3113 /* Employee+CoreDataProperties.swift */,
 				5493FF7E25FC96F2007E3113 /* EmployeeManagerCoreData.xcdatamodeld */,
+				5493FFE525FCDFF1007E3113 /* MappingModel.xcmappingmodel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,14 +259,17 @@
 				5493FFD825FCC131007E3113 /* EmployeeDetailViewModel.swift in Sources */,
 				5493FF9E25FC9956007E3113 /* Employee+CoreDataProperties.swift in Sources */,
 				5493FFB025FC9D40007E3113 /* Dynamic.swift in Sources */,
+				5493FFEC25FCE054007E3113 /* Manager+CoreDataProperties.swift in Sources */,
 				5493FFB425FCA000007E3113 /* EmployeeControllerViewModel.swift in Sources */,
 				5493FF7625FC96F2007E3113 /* AppDelegate.swift in Sources */,
 				5493FFCC25FCACF0007E3113 /* EmployeeDetailViewController.swift in Sources */,
 				5493FF8025FC96F2007E3113 /* EmployeeManagerCoreData.xcdatamodeld in Sources */,
+				5493FFE625FCDFF1007E3113 /* MappingModel.xcmappingmodel in Sources */,
 				5493FF9D25FC9956007E3113 /* Employee+CoreDataClass.swift in Sources */,
 				5493FFC025FCA6DA007E3113 /* EmployeeViewController.swift in Sources */,
 				5493FFAC25FC9C36007E3113 /* EmployeeViewModel.swift in Sources */,
 				5493FF7825FC96F2007E3113 /* SceneDelegate.swift in Sources */,
+				5493FFEB25FCE054007E3113 /* Manager+CoreDataClass.swift in Sources */,
 				5493FFB725FCA066007E3113 /* CoreDataManager.swift in Sources */,
 				5493FFC925FCAC82007E3113 /* DetailTextFieldCell.swift in Sources */,
 				5493FFC325FCA6F5007E3113 /* Constants.swift in Sources */,
@@ -464,9 +477,10 @@
 		5493FF7E25FC96F2007E3113 /* EmployeeManagerCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				5493FFDE25FCDF3D007E3113 /* EmployeeManagerCoreData v2.xcdatamodel */,
 				5493FF7F25FC96F2007E3113 /* EmployeeManagerCoreData.xcdatamodel */,
 			);
-			currentVersion = 5493FF7F25FC96F2007E3113 /* EmployeeManagerCoreData.xcdatamodel */;
+			currentVersion = 5493FFDE25FCDF3D007E3113 /* EmployeeManagerCoreData v2.xcdatamodel */;
 			path = EmployeeManagerCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
