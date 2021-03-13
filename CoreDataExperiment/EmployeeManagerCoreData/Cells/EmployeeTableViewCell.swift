@@ -26,8 +26,8 @@ class EmployeeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(employee: Employee) {
-        self.employeeNumber.text = employee.id
+    func configureCell(employee: EmployeeViewModel) {
+        self.employeeNumber.text = employee.number
         self.employeeName.text = employee.name
         self.employeeDesignation.text = employee.designation
     }

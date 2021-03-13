@@ -60,27 +60,27 @@ extension EmployeeDetailViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField.placeholder {
         case EmployeeFields.number.rawValue:
-            employeeDetailViewModel.employeeNumber = textField.text ?? ""
+            employeeDetailViewModel.employee.number = textField.text ?? ""
             break
             
         case EmployeeFields.name.rawValue:
-            employeeDetailViewModel.employeeName = textField.text ?? ""
+            employeeDetailViewModel.employee.name = textField.text ?? ""
             break
             
         case EmployeeFields.phone.rawValue:
-            employeeDetailViewModel.employeePhone = textField.text ?? ""
+            employeeDetailViewModel.employee.phone = textField.text ?? ""
             break
             
         case EmployeeFields.address.rawValue:
-            employeeDetailViewModel.employeeAddress = textField.text ?? ""
+            employeeDetailViewModel.employee.address = textField.text ?? ""
             break
             
         case EmployeeFields.location.rawValue:
-            employeeDetailViewModel.employeeLocation = textField.text ?? ""
+            employeeDetailViewModel.employee.location = textField.text ?? ""
             break
 
         case EmployeeFields.designation.rawValue:
-            employeeDetailViewModel.employeeDesignation = textField.text ?? ""
+            employeeDetailViewModel.employee.designation = textField.text ?? ""
             break
 
         default:
@@ -92,35 +92,31 @@ extension EmployeeDetailViewController: UITextFieldDelegate {
 
 extension EmployeeDetailViewController {
     func populateTableViewCellsWithDataFor(tableViewCell: DetailTextFieldCell) {
+        tableViewCell.textField.isUserInteractionEnabled = true
         switch tableViewCell.textField.placeholder {
         case EmployeeFields.number.rawValue:
-            tableViewCell.textField.text = employeeDetailViewModel.employee?.id
-            employeeDetailViewModel.employeeNumber = employeeDetailViewModel.employee?.id
+            tableViewCell.textField.text = employeeDetailViewModel.employee.number
+            tableViewCell.textField.isUserInteractionEnabled = false
             break
             
         case EmployeeFields.name.rawValue:
-            tableViewCell.textField.text = employeeDetailViewModel.employee?.name
-            employeeDetailViewModel.employeeName = employeeDetailViewModel.employee?.name
+            tableViewCell.textField.text = employeeDetailViewModel.employee.name
             break
             
         case EmployeeFields.phone.rawValue:
-            tableViewCell.textField.text = employeeDetailViewModel.employee?.phone
-            employeeDetailViewModel.employeePhone = employeeDetailViewModel.employee?.phone
+            tableViewCell.textField.text = employeeDetailViewModel.employee.phone
             break
             
         case EmployeeFields.address.rawValue:
-            tableViewCell.textField.text = employeeDetailViewModel.employee?.address
-            employeeDetailViewModel.employeeAddress = employeeDetailViewModel.employee?.address
+            tableViewCell.textField.text = employeeDetailViewModel.employee.address
             break
             
         case EmployeeFields.location.rawValue:
-            tableViewCell.textField.text = employeeDetailViewModel.employee?.location
-            employeeDetailViewModel.employeeLocation = employeeDetailViewModel.employee?.location
+            tableViewCell.textField.text = employeeDetailViewModel.employee.location
             break
 
         case EmployeeFields.designation.rawValue:
-            tableViewCell.textField.text = employeeDetailViewModel.employee?.designation
-            employeeDetailViewModel.employeeDesignation = employeeDetailViewModel.employee?.designation
+            tableViewCell.textField.text = employeeDetailViewModel.employee.designation
             break
 
         default:

@@ -11,10 +11,25 @@ class EmployeeViewModel {
     var name: String
     var number: String
     var designation: String
+    var location: String
+    var address: String
+    var phone: String
     
-    init(name: String, number: String, designation: String) {
-        self.name = name
-        self.number = number
-        self.designation = designation
+    init(employee: Employee) {
+        self.name = employee.name ?? ""
+        self.number = employee.id ?? ""
+        self.designation = employee.designation ?? ""
+        self.address = employee.address ?? ""
+        self.location = employee.location ?? ""
+        self.phone = employee.phone ?? ""
+    }
+    
+    init() {
+        self.name = ""
+        self.number = ""
+        self.designation = ""
+        self.location = ""
+        self.address = ""
+        self.phone = ""
     }
 }
