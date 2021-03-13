@@ -59,7 +59,12 @@ extension EmployeeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailViewController = UIStoryboard.init(name: storyboardName, bundle: nil).instantiateViewController(identifier: EmployeeDetailViewController.Constants.identifier) as? EmployeeDetailViewController else {
+            return
+        }
+        detailViewController.employeeDetailViewModel.employee = employeeControllerViewModel.employeesModelArray[indexPath.row]
         
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 

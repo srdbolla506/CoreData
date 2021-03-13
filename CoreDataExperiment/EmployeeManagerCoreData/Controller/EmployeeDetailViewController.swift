@@ -48,6 +48,8 @@ extension EmployeeDetailViewController: UITableViewDelegate, UITableViewDataSour
         }
         detailTextFieldCell.textField.placeholder = EmployeeFields.allCases[indexPath.row].rawValue
         
+        self.populateTableViewCellsWithDataFor(tableViewCell: detailTextFieldCell)
+        
         detailTextFieldCell.textField.delegate = self
         
         return detailTextFieldCell
@@ -85,5 +87,46 @@ extension EmployeeDetailViewController: UITextFieldDelegate {
             break
 
         }
+    }
+}
+
+extension EmployeeDetailViewController {
+    func populateTableViewCellsWithDataFor(tableViewCell: DetailTextFieldCell) {
+        switch tableViewCell.textField.placeholder {
+        case EmployeeFields.number.rawValue:
+            tableViewCell.textField.text = employeeDetailViewModel.employee?.id
+            employeeDetailViewModel.employeeNumber = employeeDetailViewModel.employee?.id
+            break
+            
+        case EmployeeFields.name.rawValue:
+            tableViewCell.textField.text = employeeDetailViewModel.employee?.name
+            employeeDetailViewModel.employeeName = employeeDetailViewModel.employee?.name
+            break
+            
+        case EmployeeFields.phone.rawValue:
+            tableViewCell.textField.text = employeeDetailViewModel.employee?.phone
+            employeeDetailViewModel.employeePhone = employeeDetailViewModel.employee?.phone
+            break
+            
+        case EmployeeFields.address.rawValue:
+            tableViewCell.textField.text = employeeDetailViewModel.employee?.address
+            employeeDetailViewModel.employeeAddress = employeeDetailViewModel.employee?.address
+            break
+            
+        case EmployeeFields.location.rawValue:
+            tableViewCell.textField.text = employeeDetailViewModel.employee?.location
+            employeeDetailViewModel.employeeLocation = employeeDetailViewModel.employee?.location
+            break
+
+        case EmployeeFields.designation.rawValue:
+            tableViewCell.textField.text = employeeDetailViewModel.employee?.designation
+            employeeDetailViewModel.employeeDesignation = employeeDetailViewModel.employee?.designation
+            break
+
+        default:
+            break
+
+        }
+
     }
 }
