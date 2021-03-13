@@ -34,7 +34,13 @@
                             <constraint firstItem="lVb-V5-Y1a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ksY-xS-goh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Employees List" id="2wq-kP-TQr"/>
+                    <navigationItem key="navigationItem" title="Employees List" id="2wq-kP-TQr">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="MN7-tl-e1Z">
+                            <connections>
+                                <action selector="addEmployeeAction:" destination="BYZ-38-t0r" id="0kb-Sm-tKa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="lVb-V5-Y1a" id="2W7-Gc-UER"/>
                     </connections>
@@ -42,6 +48,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="695.6521739130435" y="87.723214285714278"/>
+        </scene>
+        <!--Employee Detail View Controller-->
+        <scene sceneID="9Po-cV-1um">
+            <objects>
+                <viewController storyboardIdentifier="EmployeeDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bNP-5T-x8w" customClass="EmployeeDetailViewController" customModule="EmployeeManagerCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m9Y-xC-gMS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1XG-8p-WVd">
+                                <rect key="frame" x="0.0" y="54" width="414" height="798"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BAE-4E-kBp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="738"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="bNP-5T-x8w" id="AIo-mW-boB"/>
+                                            <outlet property="delegate" destination="bNP-5T-x8w" id="oHO-SX-sDU"/>
+                                        </connections>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnX-03-YWo">
+                                        <rect key="frame" x="0.0" y="748" width="414" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh5-t6-Mc3">
+                                                <rect key="frame" x="20" y="10" width="374" height="30"/>
+                                                <color key="backgroundColor" red="0.34120720609999999" green="0.50421056230000005" blue="0.54663212439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Save">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="saveButtonAction:" destination="bNP-5T-x8w" eventType="touchUpInside" id="Qid-rT-OiA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Sh5-t6-Mc3" firstAttribute="top" secondItem="pnX-03-YWo" secondAttribute="top" constant="10" id="0VV-DD-5tc"/>
+                                            <constraint firstAttribute="bottom" secondItem="Sh5-t6-Mc3" secondAttribute="bottom" constant="10" id="FeR-NI-fFu"/>
+                                            <constraint firstItem="Sh5-t6-Mc3" firstAttribute="centerX" secondItem="pnX-03-YWo" secondAttribute="centerX" id="Rmk-Yy-q0N"/>
+                                            <constraint firstItem="Sh5-t6-Mc3" firstAttribute="width" secondItem="pnX-03-YWo" secondAttribute="height" multiplier="187:25" id="vlg-P1-W1h"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pnX-03-YWo" firstAttribute="top" secondItem="BAE-4E-kBp" secondAttribute="bottom" constant="10" id="puL-dN-0OC"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wBe-TQ-7l6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1XG-8p-WVd" firstAttribute="leading" secondItem="wBe-TQ-7l6" secondAttribute="leading" id="NC5-gf-XA2"/>
+                            <constraint firstItem="wBe-TQ-7l6" firstAttribute="bottom" secondItem="1XG-8p-WVd" secondAttribute="bottom" constant="10" id="T70-nM-7M3"/>
+                            <constraint firstItem="wBe-TQ-7l6" firstAttribute="trailing" secondItem="1XG-8p-WVd" secondAttribute="trailing" id="YBB-PX-lr1"/>
+                            <constraint firstItem="1XG-8p-WVd" firstAttribute="top" secondItem="wBe-TQ-7l6" secondAttribute="top" constant="10" id="lwB-Hx-Sgn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="BAE-4E-kBp" id="JbG-po-Ye4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eZ0-HJ-3cm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1437.68115942029" y="87.723214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9j2-zg-Pr8">
@@ -63,6 +133,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

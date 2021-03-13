@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailTextFieldCell" rowHeight="70" id="Paq-EV-VU7" customClass="DetailTextFieldCell" customModule="EmployeeManagerCoreData" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Paq-EV-VU7" id="BEa-8S-oRn">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter employee Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBX-pk-QeA">
+                        <rect key="frame" x="20" y="18" width="374" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="RBX-pk-QeA" secondAttribute="bottom" constant="18" id="2v9-cZ-6OF"/>
+                    <constraint firstItem="RBX-pk-QeA" firstAttribute="leading" secondItem="BEa-8S-oRn" secondAttribute="leading" constant="20" symbolic="YES" id="61u-hB-wih"/>
+                    <constraint firstItem="RBX-pk-QeA" firstAttribute="top" secondItem="BEa-8S-oRn" secondAttribute="top" constant="18" id="TsM-ex-14c"/>
+                    <constraint firstAttribute="trailing" secondItem="RBX-pk-QeA" secondAttribute="trailing" constant="20" symbolic="YES" id="r0k-51-OpC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="RBX-pk-QeA" id="KE7-zw-o9U"/>
+            </connections>
+            <point key="canvasLocation" x="-23" y="54"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -16,12 +16,31 @@ class EmployeeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.configureTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.configureViewModel()
         self.tableView.reloadData()
     }
     
+    
+    @IBAction func addEmployeeAction(_ sender: UIBarButtonItem) {
+        guard let detailViewController = UIStoryboard.init(name: storyboardName, bundle: nil).instantiateViewController(identifier: EmployeeDetailViewController.Constants.identifier) as? EmployeeDetailViewController else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
     func configureViewModel() {
         self.employeeControllerViewModel.employeesModelArray = self.employeeControllerViewModel.fetchEmployees()
+    }
+    
+    func configureTableView() {
+        tableView.register(UINib.init(nibName: EmployeeTableViewCell.Constants.identifier, bundle: nil), forCellReuseIdentifier: EmployeeTableViewCell.Constants.identifier)
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -34,12 +53,14 @@ extension EmployeeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let employeeTableViewCell = tableView.dequeueReusableCell(withIdentifier: EmployeeTableViewCell.Constants.identifier, for: indexPath) as? EmployeeTableViewCell else {
             return UITableViewCell()
         }
-        employeeTableViewCell.configureCell(employeeViewModel: employeeControllerViewModel.employeesModelArray[indexPath.row])
+        employeeTableViewCell.configureCell(employee: employeeControllerViewModel.employeesModelArray[indexPath.row])
         
         return employeeTableViewCell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
 
 

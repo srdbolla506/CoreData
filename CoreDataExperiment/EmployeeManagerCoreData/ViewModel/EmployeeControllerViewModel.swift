@@ -9,14 +9,9 @@ import Foundation
 
 
 class EmployeeControllerViewModel {
-    var employeesModelArray: [EmployeeViewModel] = []
+    var employeesModelArray: [Employee] = []
     
-    func fetchEmployees() -> [EmployeeViewModel] {
-        var employeeModelArray: [EmployeeViewModel] = []
-        let employees = CoreDataManager.shared.fetchEmployees()
-        for employee in employees {
-            employeeModelArray.append(EmployeeViewModel.init(name: employee.name ?? "", number: employee.id ?? "", designation: employee.designation ?? ""))
-        }
-        return employeeModelArray
+    func fetchEmployees() -> [Employee] {
+        return CoreDataManager.shared.fetchEmployees()
     }
 }
